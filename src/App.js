@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch, useLocation } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import QuizPage from "./pages/QuizPage";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-function App() {
+function App({ props }) {
+    const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <TransitionGroup>
+          <CSSTransition
+              timeout={{enter:200}}
+              classNames={'fade'}
+              key={location.key}
+          >
+             <Switch>
+                <Route exact path={"/"} render={ props => <LandingPage />} ></Route>
+                <Route exact path={"/quiz"} render={ props => <QuizPage />} ></Route>
+             </Switch>
+          </CSSTransition>
+      </TransitionGroup>
   );
 }
 
