@@ -19,7 +19,7 @@ function StartButton (props) {
 const Wrapper = styled.div`
     width: 26rem;
     height: 6rem;
-    border: 2px solid powderblue;
+    border: 2px solid #BFD8B8;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 `;
 
 const ButtonText = styled.p`
-    color: powderblue;
+    color: #BFD8B8;
     font-size: 1.5rem;
     text-align: center;
 `;

@@ -38,7 +38,7 @@ const Container = styled.div`
 const Content = styled.div`
     height: 600px;
     width: 100%;
-    border: 2px solid blue;
+    border: 2px solid #F4D19B;
     border-radius: 8px; 
     display: flex;
     flex-direction: column;
