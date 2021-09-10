@@ -1,19 +1,50 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import Lottie from "react-lottie";
+import Hoops from "../img/lottie/75839-jump-through-4-hoops.json";
 import StartButton from "../components/StartButton";
 
+const lottieOptions = {
+    animationData: Hoops,
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+        className: 'add-class',
+        preserveAspectRatio: 'xMidYMid slice'
+    }
+}
+
 function QuizPage () {
+    const [isStopped, SetIsStopped] = useState(false);
+    const [isPaused, SetIsPaused] = useState(false);
+
     useEffect( () => {
 
     }, []);
+
+    const onStop = () => {
+        SetIsStopped(!isStopped)
+    };
+
+    const onPause = () => {
+        SetIsPaused(!isPaused)
+    };
+
 
     return (
         <>
             <Wrapper>
                 <Container>
                     <Content>
-                        <StartButton text={"감사합니다"} />
+                        <Lottie
+                            options={lottieOptions}
+                            isStopped={isStopped}
+                            isPaused={isPaused}
+                            isClickToPauseDisabled={false}
+                            style={{width: "300px", height: "300px"}}
+                        />
+                        <LottieButton onClick={onPause}>Play/Pause</LottieButton>
                     </Content>
                 </Container>
             </Wrapper>
@@ -43,6 +74,12 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+`;
+
+const LottieButton = styled.button`
+    width: 30%;
+    
 `;
 
 export default QuizPage;
