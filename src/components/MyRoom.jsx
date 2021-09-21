@@ -5,9 +5,8 @@ function MyRoom(props) {
 
     return (
         <Wrapper>
-            <MyRoomTitle src={`/images/my_room_title@3x.png`} />
-            <MyRoomImage src={`/images/my_room_${props.id}@3x.png`} />
-            <MyRoomStatistic src={`/images/my_room_stat_${props.id}@3x.png`} />
+            <MyRoomImage src={`/images/my_room_image${props.id}@3x.png`} />
+            {/*<MyRoomStatistic src={`/images/my_room_stat_${props.id}@3x.png`} />*/}
         </Wrapper>
     )
 }

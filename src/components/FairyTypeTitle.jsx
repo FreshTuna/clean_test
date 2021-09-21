@@ -9,9 +9,10 @@ function FairyTypeTitle (props) {
 
     return(
         <Container>
-            <CommonTitle src={TitleImage} />
-            <FairyTitle src={`/images/FairyTitle${props.id}@3x.png`} />
-            <FairyImage src={`/images/FairyImage${props.id}@3x.png`} />
+            {/*<CommonTitle src={TitleImage} />*/}
+            {/*<FairyTitle src={`/images/FairyTitle${props.id}@3x.png`} />*/}
+            {/*<FairyImage src={`/images/FairyImage${props.id}@3x.png`} />*/}
+            <FairyImage src={`/images/my_room_main${props.id}@3x.png`}></FairyImage>
         </Container>
     )
 }
@@ -34,7 +35,6 @@ const FairyTitle = styled.img`
 `
 
 const FairyImage = styled.img`
-    margin-top: 11px;
     width: 100%;
 `;
 

@@ -32,7 +32,7 @@ function ResultPage (props) {
             <Wrapper>
                 <Container>
                     <FairyTypeTitle id={resultType} />
-                    <FairyTypeContent id={resultType} content={content} special={special} />
+                    {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
                     <MyRoom id={resultType} />
                 </Container>
             </Wrapper>
