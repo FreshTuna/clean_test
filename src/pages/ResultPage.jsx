@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FairyTypeTitle from "../components/FairyTypeTitle";
 import FairyTypeContent from "../components/FairyTypeContent";
 import MyRoom from "../components/MyRoom";
+import FairyMatch from "../components/FairyMatch";
 
 function ResultPage (props) {
     const resultType = props.match.params.id;
@@ -34,6 +35,7 @@ function ResultPage (props) {
                     <FairyTypeTitle id={resultType} />
                     {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
                     <MyRoom id={resultType} />
+                    <FairyMatch fit={1} unfit={1}/>
                 </Container>
             </Wrapper>
         </>
