@@ -5,6 +5,7 @@ import FairyTypeContent from "../components/FairyTypeContent";
 import MyRoom from "../components/MyRoom";
 import FairyMatch from "../components/FairyMatch";
 import ButtonContainer from "../components/ButtonContainer";
+import ResultFooter from "../components/ResultFooter";
 
 function ResultPage (props) {
     const resultType = props.match.params.id;
@@ -23,6 +24,7 @@ function ResultPage (props) {
                     <FairyMatch fit={1} unfit={1}/>
                     <ButtonContainer />
                     <ContentBorder src={"/images/content_border@3x.png"} />
+                    <ResultFooter />
                 </Container>
             </Wrapper>
         </>
