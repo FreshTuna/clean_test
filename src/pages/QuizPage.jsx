@@ -41,7 +41,7 @@ function QuizPage () {
     const toResult = () => {
         setLoading(true);
         setTimeout( () => {
-            setLoading(false);
+
             history.push('/result/1');
         }, 1000)
     }
