@@ -46,7 +46,7 @@ function QuizPage () {
                         </QuestionTitleArea>
                         <QuestionImage questionNumber={1} />
                         <QuestionAnswerArea>
-                            <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto" }}>
+                            <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto", marginBottom:"12px" }}>
                                 <YesButton src={"/images/question_yes@3x.png"} />
                             </Link>
                             <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto" }}>
@@ -116,7 +116,6 @@ const QuestionAnswerArea = styled.div`
 
 const YesButton = styled.img`
     width: 315px;
-    margin-bottom: 12px;
 `;
 
 const NoButton = styled.img`

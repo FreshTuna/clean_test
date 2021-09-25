@@ -17,7 +17,7 @@ function LandingPage () {
                         <LandingSubTitle src={"/images/landing_sub_title@3x.png"} />
                         <LandingMainImage src={"/images/landing_main@3x.png"} />
                         <Link to={"/quiz"} style={{ textDecoration: 'none', width: "auto" }}>
-                            <StartButton  />
+                            <StartButton />
                         </Link>
                     </Content>
                 </Container>
