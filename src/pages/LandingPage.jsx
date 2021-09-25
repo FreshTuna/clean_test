@@ -13,8 +13,11 @@ function LandingPage () {
             <Wrapper>
                 <Container>
                     <Content>
-                        <Link to={"/quiz"} style={{ textDecoration: 'none' }}>
-                            <StartButton text={"안녕하세요"} />
+                        <LandingTitle src={"/images/landing_title@3x.png"} />
+                        <LandingSubTitle src={"/images/landing_sub_title@3x.png"} />
+                        <LandingMainImage src={"/images/landing_main@3x.png"} />
+                        <Link to={"/quiz"} style={{ textDecoration: 'none', width: "auto" }}>
+                            <StartButton  />
                         </Link>
                     </Content>
                 </Container>
@@ -23,28 +26,48 @@ function LandingPage () {
     )
 };
 
+
 const Wrapper = styled.section`
-    display: flex;
-    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    touch-action: none;
 `;
 
 const Container = styled.div`
-   width: ${({ theme }) => theme.deviceSizes.mobileL};
+   width: 100%;
    height: 100vh;
-   background-color: white;
+   background-color: #FBF9F4;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   font-family: "Sandoll GothicNeo3"
+   font-size: 15px;
+   font-weight: 400;
+   font-align: center;
+   align-items: center;
 `;
 
 const Content = styled.div`
-    height: 600px;
+    height: 100%;
     width: 100%;
-    border: 2px solid #E7EAB5;
-    border-radius: 8px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items:center;
+`;
+
+const LandingTitle = styled.img`
+    width: 254px;
+    margin-bottom: 12px;
+`;
+
+const LandingSubTitle = styled.img`
+    width: 265px;
+    margin-bottom: 63px;
+`;
+
+const LandingMainImage = styled.img`
+    width: 265px;
 `;
 
 export default LandingPage;
