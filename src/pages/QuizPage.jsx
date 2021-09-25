@@ -7,6 +7,7 @@ import StartButton from "../components/StartButton";
 import QuestionNumber from "../components/QuestionNumber";
 import QuestionContent from "../components/QuestionContent";
 import QuestionImage from "../components/QuestionImage";
+import {useHistory} from "react-router-dom";
 
 const lottieOptions = {
     animationData: Hoops,
@@ -21,6 +22,9 @@ const lottieOptions = {
 function QuizPage () {
     const [isStopped, SetIsStopped] = useState(false);
     const [isPaused, SetIsPaused] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const history = useHistory();
 
     useEffect( () => {
 
@@ -34,36 +38,48 @@ function QuizPage () {
         SetIsPaused(!isPaused)
     };
 
+    const toResult = () => {
+        setLoading(true);
+        setTimeout( () => {
+            setLoading(false);
+            history.push('/result/1');
+        }, 1000)
+    }
 
     return (
         <>
             <Wrapper>
-                <Container>
-                    <Content>
-                        <QuestionTitleArea>
-                            <QuestionNumber questionNumber={1} />
-                            <QuestionContent questionNumber={1} />
-                        </QuestionTitleArea>
-                        <QuestionImage questionNumber={1} />
-                        <QuestionAnswerArea>
-                            <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto", marginBottom:"12px" }}>
-                                <YesButton src={"/images/question_yes@3x.png"} />
-                            </Link>
-                            <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto" }}>
-                                <NoButton src={"/images/question_no@3x.png"} />
-                            </Link>
+                { !loading ?
+                    <Container>
+                        <Content>
+                            <QuestionTitleArea>
+                                <QuestionNumber questionNumber={1} />
+                                <QuestionContent questionNumber={1} />
+                            </QuestionTitleArea>
+                            <QuestionImage questionNumber={1} />
+                            <QuestionAnswerArea>
+                                <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto", marginBottom:"12px" }}>
+                                    <YesButton src={"/images/question_yes@3x.png"} />
+                                </Link>
+                                <NoButton src={"/images/question_no@3x.png"} onClick={toResult}/>
 
-                        </QuestionAnswerArea>
-                        {/*<Lottie*/}
-                        {/*    options={lottieOptions}*/}
-                        {/*    isStopped={isStopped}*/}
-                        {/*    isPaused={isPaused}*/}
-                        {/*    isClickToPauseDisabled={false}*/}
-                        {/*    style={{width: "300px", height: "300px"}}*/}
-                        {/*/>*/}
-                        {/*<LottieButton onClick={onPause}>Play/Pause</LottieButton>*/}
-                    </Content>
-                </Container>
+
+                            </QuestionAnswerArea>
+                            {/*<Lottie*/}
+                            {/*    options={lottieOptions}*/}
+                            {/*    isStopped={isStopped}*/}
+                            {/*    isPaused={isPaused}*/}
+                            {/*    isClickToPauseDisabled={false}*/}
+                            {/*    style={{width: "300px", height: "300px"}}*/}
+                            {/*/>*/}
+                            {/*<LottieButton onClick={onPause}>Play/Pause</LottieButton>*/}
+                        </Content>
+                    </Container>
+                    :
+                    <LoadingContainer>
+                        <LoadingFairyImage src={"/images/loading_fairy@3x.png"}/>
+                    </LoadingContainer>
+                }
             </Wrapper>
         </>
     )
@@ -87,6 +103,16 @@ const Container = styled.div`
    font-weight: 400;
    font-align: center;
    align-items: center;
+`;
+
+const LoadingContainer = styled.div`
+    width: 100%;
+    height: 100vh;
+    background-color: #00BED6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Content = styled.div`
@@ -124,6 +150,10 @@ const NoButton = styled.img`
 
 const LottieButton = styled.button`
     width: 30%;
+`;
+
+const LoadingFairyImage = styled.img`
+    width: 250px;
 `;
 
 export default QuizPage;
