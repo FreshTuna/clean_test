@@ -8,6 +8,7 @@ import QuestionNumber from "../components/QuestionNumber";
 import QuestionContent from "../components/QuestionContent";
 import QuestionImage from "../components/QuestionImage";
 import {useHistory} from "react-router-dom";
+import ProgressBar from "../components/ProgressBar";
 
 const lottieOptions = {
     animationData: Hoops,
@@ -23,6 +24,8 @@ function QuizPage () {
     const [isStopped, SetIsStopped] = useState(false);
     const [isPaused, SetIsPaused] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [questionNumber, setQuestionNumber] = useState(1);
+    const [progressFill, setProgressFill] = useState(1);
 
     const history = useHistory();
 
@@ -46,24 +49,36 @@ function QuizPage () {
         }, 1000)
     }
 
+    const onClickAnswer = () => {
+        console.log(progressFill);
+        if(progressFill !=12) {
+            setProgressFill(progressFill + 1);
+        }
+        else{
+            toResult()
+        }
+    }
+
     return (
         <>
             <Wrapper>
                 { !loading ?
                     <Container>
+                        <ProgressBar fill={(progressFill/12) * 100} />
                         <Content>
                             <QuestionTitleArea>
-                                <QuestionNumber questionNumber={1} />
-                                <QuestionContent questionNumber={1} />
+                                <QuestionNumber questionNumber={questionNumber} />
+                                <QuestionContent questionNumber={questionNumber} />
                             </QuestionTitleArea>
-                            <QuestionImage questionNumber={1} />
+                            <QuestionImage questionNumber={questionNumber} />
                             <QuestionAnswerArea>
-                                <Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto", marginBottom:"12px" }}>
-                                    <YesButton src={"/images/question_yes@3x.png"} />
-                                </Link>
-                                <NoButton src={"/images/question_no@3x.png"} onClick={toResult}/>
-
-
+                                {/*<Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto", marginBottom:"12px" }}>*/}
+                                {/*    <YesButton src={"/images/question_yes@3x.png"} />*/}
+                                {/*</Link>*/}
+                                {/*<NoButton src={"/images/question_no@3x.png"} onClick={toResult}/>*/}
+                                <YesButton src={"/images/question_yes@3x.png"} onClick={onClickAnswer} />
+                                <div style={{marginBottom:"12px"}} />
+                                <NoButton src={"/images/question_no@3x.png"} onClick={onClickAnswer}/>
                             </QuestionAnswerArea>
                             {/*<Lottie*/}
                             {/*    options={lottieOptions}*/}
@@ -142,10 +157,12 @@ const QuestionAnswerArea = styled.div`
 
 const YesButton = styled.img`
     width: 315px;
+    cursor: pointer;
 `;
 
 const NoButton = styled.img`
     width: 315px;
+    cursor: pointer;
 `;
 
 const LottieButton = styled.button`
