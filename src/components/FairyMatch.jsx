@@ -9,10 +9,12 @@ function FairyMatch(props) {
     return (
         <Wrapper>
             <MatchContainer>
+                <GoodFairy src={"/images/good_mate@3x.png"} />
                 <FairyFrame src={"/images/fairy_match_frame@3x.png"} />
                 <FairyName src={`/images/fairy_name${props.fit}@3x.png`} />
             </MatchContainer>
             <MatchContainer>
+                <BadFairy src={"/images/bad_mate@3x.png"} />
                 <FairyFrame src={"/images/fairy_match_frame@3x.png"} />
                 <FairyName src={`/images/fairy_name${props.unfit}@3x.png`} />
             </MatchContainer>
@@ -34,13 +36,20 @@ const MatchContainer = styled.div`
 `;
 
 const FairyFrame = styled.img`
-    margin-top: 10px;
     width: 144px;
     margin-bottom: 12px;
 `;
 
 const FairyName = styled.img`
     width: 103px;
+`;
+
+const GoodFairy = styled.img`
+    width: 143px;
+`;
+
+const BadFairy = styled.img`
+    width: 143px;
 `;
 
 export default FairyMatch;
