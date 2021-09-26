@@ -21,7 +21,7 @@ const ProgressValue = styled.div`
     width: ${props => props.fill}%;
     background-color: #00BED6;
     height: 8px;
-    transition: all ease 1.5s 0s;
+    transition: all ease 1s 0s;
 `;
 
 export default ProgressBar;

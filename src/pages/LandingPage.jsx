@@ -1,26 +1,42 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import styled from "styled-components";
 import StartButton from "../components/StartButton";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function LandingPage () {
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
+
     useEffect( () => {
 
     }, []);
 
+    const toQuiz = () => {
+        setLoading(true);
+        setTimeout( () => {
+
+            history.push('/quiz');
+        }, 1000)
+    }
+
     return (
         <>
             <Wrapper>
-                <Container>
-                    <Content>
-                        <LandingTitle src={"/images/landing_title@3x.png"} />
-                        <LandingSubTitle src={"/images/landing_sub_title@3x.png"} />
-                        <LandingMainImage src={"/images/landing_main@3x.png"} />
-                        <Link to={"/quiz"} style={{ textDecoration: 'none', width: "auto" }}>
-                            <StartButton />
-                        </Link>
-                    </Content>
-                </Container>
+                {!loading ?
+                    <Container>
+                        <Content>
+                            <LandingTitle src={"/images/landing_title@3x.png"}/>
+                            <LandingSubTitle src={"/images/landing_sub_title@3x.png"}/>
+                            <LandingMainImage src={"/images/landing_main@3x.png"}/>
+
+                            <StartButton click={toQuiz}/>
+                        </Content>
+                    </Container>
+                    :
+                    <LoadingContainer>
+                        <LoadingFairyImage src={"/images/loading_fairy_single@3x.png"}/>
+                    </LoadingContainer>
+                }
             </Wrapper>
         </>
     )
@@ -47,6 +63,16 @@ const Container = styled.div`
    align-items: center;
 `;
 
+const LoadingContainer = styled.div`
+    width: 100%;
+    height: 100vh;
+    background-color: #00BED6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
 const Content = styled.div`
     height: 100%;
     width: 100%;
@@ -68,6 +94,10 @@ const LandingSubTitle = styled.img`
 
 const LandingMainImage = styled.img`
     width: 265px;
+`;
+
+const LoadingFairyImage = styled.img`
+    width: 110px;
 `;
 
 export default LandingPage;
