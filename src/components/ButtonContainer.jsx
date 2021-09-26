@@ -1,10 +1,17 @@
 import {useEffect} from "react";
 import styled from "styled-components";
+import {useHistory} from "react-router-dom";
 
 function ButtonContainer () {
+
+    const history = useHistory();
     useEffect( () => {
 
     }, []);
+
+    const restartTest = () => {
+        history.push('/');
+    }
 
     return (
         <Wrapper>
@@ -12,7 +19,7 @@ function ButtonContainer () {
                 <ShareButton src={"/images/share_btn@3x.png"} />
                 <ShareButton src={"/images/copylink_btn@3x.png"} />
             </ShareButtonContainer>
-            <RestartButton src={"/images/re_test_btn@3x.png"} />
+            <RestartButton src={"/images/re_test_btn@3x.png"} onClick={restartTest} />
         </Wrapper>
     )
 }
@@ -34,10 +41,12 @@ const ShareButtonContainer = styled.div`
 
 const RestartButton = styled.img`
     width: 312px;
+    cursor: pointer;
 `;
 
 const ShareButton = styled.img`
     width: 150px;
+    cursor: pointer;
 `;
 
 export default ButtonContainer;
