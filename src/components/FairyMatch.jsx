@@ -26,6 +26,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 360px;
 `;
 
 const MatchContainer = styled.div`

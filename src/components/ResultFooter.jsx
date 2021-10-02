@@ -4,7 +4,6 @@ function ResultFooter () {
 
     return (
         <Wrapper>
-            <SymbolImage src={"/images/symbol_blue@4x.png"} />
             <PresentBy src={"/images/footer_text@3x.png"} />
             <Contributors src={"/images/contributors@3x.png"} />
         </Wrapper>

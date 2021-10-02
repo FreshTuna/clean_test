@@ -30,6 +30,7 @@ function LandingPage () {
                             <LandingMainImage src={"/images/landing_main@3x.png"}/>
 
                             <StartButton click={toQuiz}/>
+                            <LifeLabIcon src={"/images/lifelab_icon@3x.png"}/>
                         </Content>
                     </Container>
                     :
@@ -97,6 +98,11 @@ const LandingMainImage = styled.img`
 
 const LoadingFairyImage = styled.img`
     width: 110px;
+`;
+
+const LifeLabIcon = styled.img`
+    width: 75px;
+    margin-top: 9px;
 `;
 
 export default LandingPage;

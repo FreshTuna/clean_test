@@ -6,6 +6,7 @@ import MyRoom from "../components/MyRoom";
 import FairyMatch from "../components/FairyMatch";
 import ButtonContainer from "../components/ButtonContainer";
 import ResultFooter from "../components/ResultFooter";
+import CleaningLabFooter from "../components/CleaningLabFooter";
 
 function ResultPage (props) {
     const resultType = props.match.params.id;
@@ -23,7 +24,7 @@ function ResultPage (props) {
                     <MyRoom id={resultType} />
                     <FairyMatch fit={1} unfit={1}/>
                     <ButtonContainer />
-                    <ContentBorder src={"/images/content_border@3x.png"} />
+                    <CleaningLabFooter />
                     <ResultFooter />
                 </Container>
             </Wrapper>
@@ -47,12 +48,6 @@ const Container = styled.div`
    font-weight: 400;
    font-align: center;
    align-items: center;
-`;
-
-const ContentBorder = styled.img`
-    margin-top: 30px;
-    margin-bottom: 41px;
-    width: 289px;
 `;
 
 export default ResultPage;
