@@ -84,7 +84,7 @@ function QuizPage () {
     useEffect( () => {
         setTimeout( () => {
             setComponentOpacity(1);
-        }, 300)
+        }, 350)
     }, [questionNumber]);
 
     const answerHandler = (answer) => {
@@ -115,7 +115,7 @@ function QuizPage () {
             setComponentOpacity(0);
             setTimeout( () => {
                 setQuestionNumber(questionNumber + 1);
-            }, 300)
+            }, 250)
 
         }
     }
@@ -197,7 +197,7 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
     opacity: ${props => props.opacity};
 `;
 
