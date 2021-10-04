@@ -15,7 +15,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 `;
 
 const MyRoomTitle = styled.img`

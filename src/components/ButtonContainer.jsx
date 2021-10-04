@@ -1,25 +1,31 @@
 import {useEffect} from "react";
 import styled from "styled-components";
 import {useHistory} from "react-router-dom";
+import {CopyToClipboard} from "react-copy-to-clipboard/lib/Component";
 
 function ButtonContainer () {
 
     const history = useHistory();
     useEffect( () => {
-
+        console.log(copyUrl);
     }, []);
 
     const restartTest = () => {
         history.push('/');
     }
 
+    const copyUrl = window.location.href;
+
+
     return (
         <Wrapper>
             <ShareButtonContainer>
                 <ShareButton src={"/images/share_btn@3x.png"} />
-                <ShareButton src={"/images/copylink_btn@3x.png"} />
+                <CopyToClipboard text={copyUrl} >
+                    <ShareButton src={"/images/copylink_btn@3x.png"} />
+                </CopyToClipboard>
             </ShareButtonContainer>
-            <RestartButton src={"/images/re_test_btn@3x.png"} onClick={restartTest} />
+            <RestartButton src={"/images/re_test_btn@3x.png"} />
         </Wrapper>
     )
 }

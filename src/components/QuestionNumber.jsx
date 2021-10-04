@@ -3,7 +3,7 @@ import styled from "styled-components";
 function QuestionNumber (props) {
     return (
         <>
-            <QuestionText src={`/images/question${props.questionNumber}@3x.png`} />
+            <QuestionText src={`/images/questions/question_${props.questionNumber}_title@3x.png`} />
         </>
     )
 }

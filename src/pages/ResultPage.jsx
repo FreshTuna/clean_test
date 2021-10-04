@@ -1,4 +1,5 @@
 import {useEffect} from "react";
+import {useLocation} from "react-router-dom";
 import styled from "styled-components";
 import FairyTypeTitle from "../components/FairyTypeTitle";
 import FairyTypeContent from "../components/FairyTypeContent";
@@ -10,6 +11,11 @@ import CleaningLabFooter from "../components/CleaningLabFooter";
 
 function ResultPage (props) {
     const resultType = props.match.params.id;
+    const location = useLocation();
+    let mbti = ""
+    if (location.state) {
+        mbti = location.state.mbti;
+    }
 
     useEffect( () => {
         console.log(props.match.params.id);
@@ -19,6 +25,7 @@ function ResultPage (props) {
         <>
             <Wrapper>
                 <Container>
+                    {mbti && mbti}
                     <FairyTypeTitle id={resultType} />
                     {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
                     <MyRoom id={resultType} />

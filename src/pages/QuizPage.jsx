@@ -9,6 +9,10 @@ import QuestionContent from "../components/QuestionContent";
 import QuestionImage from "../components/QuestionImage";
 import {useHistory} from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
+import AnswerSmall from "../components/AnswerSmall";
+import AnswerLarge from "../components/AnswerLarge";
+import AnswerWithImage from "../components/AnswerWithImage";
+import {DECISION, ENERGY, INFORMATION, LIFE_STYLE} from "../common/constant";
 
 const lottieOptions = {
     animationData: Hoops,
@@ -26,10 +30,16 @@ function QuizPage () {
     const [loading, setLoading] = useState(false);
     const [questionNumber, setQuestionNumber] = useState(1);
     const [progressFill, setProgressFill] = useState(1);
+    const [energy, setEnergy] = useState(0);
+    const [information, setInformation] = useState(0);
+    const [decision, setDecision] = useState(0);
+    const [lifeStyle, setLifeStyle] = useState(0);
+    const [componentOpacity, setComponentOpacity] = useState(0);
 
     const history = useHistory();
 
     useEffect( () => {
+
 
     }, []);
 
@@ -41,21 +51,72 @@ function QuizPage () {
         SetIsPaused(!isPaused)
     };
 
-    const toResult = () => {
-        setLoading(true);
-        setTimeout( () => {
+    const initMBTI = () => {
+        let MBTI = "";
 
-            history.push('/result/1');
-        }, 1000)
+        if(energy > 0){
+            MBTI += "E"
+        } else {
+            MBTI += "I"
+        }
+
+        if(information > 0){
+            MBTI += "N"
+        } else {
+            MBTI += "S"
+        }
+
+        if(decision > 0){
+            MBTI += "T"
+        } else {
+            MBTI += "F"
+        }
+
+        if(lifeStyle > 0){
+            MBTI += "J"
+        } else {
+            MBTI += "P"
+        }
+
+        return MBTI;
     }
 
-    const onClickAnswer = () => {
-        console.log(progressFill);
-        if(progressFill !=12) {
-            setProgressFill(progressFill + 1);
+    useEffect( () => {
+        setTimeout( () => {
+            setComponentOpacity(1);
+        }, 300)
+    }, [questionNumber]);
+
+    const answerHandler = (answer) => {
+        if (ENERGY.includes(questionNumber)){
+            setEnergy(energy + answer);
+        }else if (INFORMATION.includes(questionNumber)){
+            setInformation(information + answer);
+        }else if (DECISION.includes(questionNumber)){
+            setDecision( decision + answer);
+        }else if (LIFE_STYLE.includes(questionNumber)){
+            setLifeStyle(lifeStyle + answer);
         }
-        else{
-            toResult()
+
+        setProgressFill(progressFill + 1);
+
+        if (questionNumber == 12){
+            const mbti = initMBTI()
+            console.log(mbti);
+            setLoading(true);
+
+            setTimeout( () => {
+                history.push({
+                    pathname:'/result/1',
+                    state: {mbti: mbti}
+                });
+            }, 1000)
+        } else {
+            setComponentOpacity(0);
+            setTimeout( () => {
+                setQuestionNumber(questionNumber + 1);
+            }, 300)
+
         }
     }
 
@@ -65,20 +126,21 @@ function QuizPage () {
                 { !loading ?
                     <Container>
                         <ProgressBar fill={(progressFill/12) * 100} />
-                        <Content>
+                        <Content opacity={componentOpacity}>
                             <QuestionTitleArea>
                                 <QuestionNumber questionNumber={questionNumber} />
                                 <QuestionContent questionNumber={questionNumber} />
                             </QuestionTitleArea>
-                            <QuestionImage questionNumber={questionNumber} />
                             <QuestionAnswerArea>
-                                {/*<Link to={"/result/1"} style={{ textDecoration: 'none', width: "auto", marginBottom:"12px" }}>*/}
-                                {/*    <YesButton src={"/images/question_yes@3x.png"} />*/}
-                                {/*</Link>*/}
-                                {/*<NoButton src={"/images/question_no@3x.png"} onClick={toResult}/>*/}
-                                <YesButton src={"/images/question_yes@3x.png"} onClick={onClickAnswer} />
-                                <div style={{marginBottom:"12px"}} />
-                                <NoButton src={"/images/question_no@3x.png"} onClick={onClickAnswer}/>
+                                { [1,3,4,6,8,11,12].includes(questionNumber) &&
+                                    <AnswerSmall questionNumber={questionNumber} answerHandler={answerHandler} />
+                                }
+                                { [2,5,7,9].includes(questionNumber) &&
+                                    <AnswerWithImage questionNumber={questionNumber} answerHandler={answerHandler} />
+                                }
+                                {questionNumber == 10 &&
+                                    <AnswerLarge questionNumber={questionNumber} answerHandler={answerHandler} />
+                                }
                             </QuestionAnswerArea>
                             {/*<Lottie*/}
                             {/*    options={lottieOptions}*/}
@@ -134,8 +196,9 @@ const Content = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items:center;
+    transition: opacity 0.3s;
+    opacity: ${props => props.opacity};
 `;
 
 const QuestionTitleArea = styled.div`
@@ -143,15 +206,16 @@ const QuestionTitleArea = styled.div`
     width: 315px;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 36px;
+    margin-top: 56px;
 `;
 
 const QuestionAnswerArea = styled.div`
-    width:315px; 
+    width:100%; 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 35px;
+    justify-content: center;
+    margin-top: 48px;
+    align-items:center;
 `;
 
 const YesButton = styled.img`
