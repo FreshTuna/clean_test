@@ -25,7 +25,7 @@ function ButtonContainer () {
                     <ShareButton src={"/images/copylink_btn@3x.png"} />
                 </CopyToClipboard>
             </ShareButtonContainer>
-            <RestartButton src={"/images/re_test_btn@3x.png"} />
+            <RestartButton src={"/images/re_test_btn@3x.png"}  onClick={restartTest}/>
         </Wrapper>
     )
 }
