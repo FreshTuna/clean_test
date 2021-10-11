@@ -134,10 +134,10 @@ function QuizPage () {
                                 <QuestionContent questionNumber={questionNumber} />
                             </QuestionTitleArea>
                             <QuestionAnswerArea>
-                                { [1,3,4,6,8,11,12].includes(questionNumber) &&
+                                { [3,4,12].includes(questionNumber) &&
                                     <AnswerSmall questionNumber={questionNumber} answerHandler={answerHandler} />
                                 }
-                                { [2,5,7,9].includes(questionNumber) &&
+                                { [1,2,5,6,7,8,9,11].includes(questionNumber) &&
                                     <AnswerWithImage questionNumber={questionNumber} answerHandler={answerHandler} />
                                 }
                                 {questionNumber == 10 &&
