@@ -1,10 +1,14 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import styled from "styled-components";
 import TitleImage from "../img/common_title@3x.png"
+import {MBTI_NUMBER} from "../common/constant";
 
 function FairyTypeTitle (props) {
-    useEffect(() => {
 
+    const [mbtiId, setMbtiId] = useState(1);
+
+    useEffect(() => {
+        // setMbtiId(MBTI_NUMBER[props.mbti].key);
     }, []);
 
     return(
@@ -12,7 +16,7 @@ function FairyTypeTitle (props) {
             {/*<CommonTitle src={TitleImage} />*/}
             {/*<FairyTitle src={`/images/FairyTitle${props.id}@3x.png`} />*/}
             {/*<FairyImage src={`/images/FairyImage${props.id}@3x.png`} />*/}
-            <FairyImage src={`/images/my_room_main${props.id}@3x.png`}></FairyImage>
+            <FairyImage src={`/images/results/result_main_frame_${props.result}@3x.png`}></FairyImage>
         </Container>
     )
 }

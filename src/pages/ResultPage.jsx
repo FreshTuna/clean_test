@@ -26,7 +26,7 @@ function ResultPage (props) {
             <Wrapper>
                 <Container>
                     {mbti && mbti}
-                    <FairyTypeTitle id={resultType} />
+                    <FairyTypeTitle result={resultType} />
                     {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
                     <MyRoom id={resultType} />
                     <FairyMatch fit={1} unfit={1}/>

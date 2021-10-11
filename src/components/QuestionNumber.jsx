@@ -9,7 +9,7 @@ function QuestionNumber (props) {
 }
 
 const QuestionText = styled.img`
-    width: 52px;
+    height: 22.5px;
     margin-bottom: 22px;
 `;
 

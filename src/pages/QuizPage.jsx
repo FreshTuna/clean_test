@@ -12,7 +12,7 @@ import ProgressBar from "../components/ProgressBar";
 import AnswerSmall from "../components/AnswerSmall";
 import AnswerLarge from "../components/AnswerLarge";
 import AnswerWithImage from "../components/AnswerWithImage";
-import {DECISION, ENERGY, INFORMATION, LIFE_STYLE} from "../common/constant";
+import {DECISION, ENERGY, INFORMATION, LIFE_STYLE, MBTI_NUMBER} from "../common/constant";
 
 const lottieOptions = {
     animationData: Hoops,
@@ -104,11 +104,13 @@ function QuizPage () {
             const mbti = initMBTI()
             console.log(mbti);
             setLoading(true);
+            console.log(MBTI_NUMBER[mbti])
+            const mbtiId = MBTI_NUMBER[mbti].KEY
 
             setTimeout( () => {
                 history.push({
-                    pathname:'/result/1',
-                    state: {mbti: mbti}
+                    pathname:`/result/${mbtiId}`
+                    // state: {mbti: mbti}
                 });
             }, 1000)
         } else {
