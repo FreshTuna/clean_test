@@ -109,8 +109,8 @@ function QuizPage () {
 
             setTimeout( () => {
                 history.push({
-                    pathname:`/result/${mbtiId}`
-                    // state: {mbti: mbti}
+                    pathname:`/result/${mbtiId}`,
+                    state: {mbti: mbti}
                 });
             }, 1000)
         } else {
@@ -131,18 +131,18 @@ function QuizPage () {
                         <Content opacity={componentOpacity}>
                             <QuestionTitleArea>
                                 <QuestionNumber questionNumber={questionNumber} />
-                                <QuestionContent questionNumber={questionNumber} />
+                                <QuestionContent questionNumber={questionNumber}/>
                             </QuestionTitleArea>
                             <QuestionAnswerArea>
-                                { [3,4,12].includes(questionNumber) &&
+                                { [].includes(questionNumber) &&
                                     <AnswerSmall questionNumber={questionNumber} answerHandler={answerHandler} />
                                 }
-                                { [1,2,5,6,7,8,9,11].includes(questionNumber) &&
+                                { [1,2,3,4,5,6,7,8,9,10,11,12].includes(questionNumber) &&
                                     <AnswerWithImage questionNumber={questionNumber} answerHandler={answerHandler} />
                                 }
-                                {questionNumber == 10 &&
-                                    <AnswerLarge questionNumber={questionNumber} answerHandler={answerHandler} />
-                                }
+                                {/*{questionNumber == 10 &&*/}
+                                {/*    <AnswerLarge questionNumber={questionNumber} answerHandler={answerHandler} />*/}
+                                {/*}*/}
                             </QuestionAnswerArea>
                             {/*<Lottie*/}
                             {/*    options={lottieOptions}*/}

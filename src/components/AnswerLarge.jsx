@@ -18,6 +18,10 @@ const Wrapper = styled.section`
     align-items: center;
 `;
 
+const QuestionPlusImage = styled.img`
+    width: 100%;
+`;
+
 const AnswerImage = styled.img`
     width: 135px;
     cursor: pointer;
