@@ -3,16 +3,14 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Lottie from "react-lottie";
 import Hoops from "../img/lottie/75839-jump-through-4-hoops.json";
-import StartButton from "../components/StartButton";
 import QuestionNumber from "../components/QuestionNumber";
 import QuestionContent from "../components/QuestionContent";
-import QuestionImage from "../components/QuestionImage";
 import {useHistory} from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
 import AnswerSmall from "../components/AnswerSmall";
-import AnswerLarge from "../components/AnswerLarge";
 import AnswerWithImage from "../components/AnswerWithImage";
 import {DECISION, ENERGY, INFORMATION, LIFE_STYLE, MBTI_NUMBER} from "../common/constant";
+import {isMobile} from "react-device-detect";
 
 const lottieOptions = {
     animationData: Hoops,
@@ -39,7 +37,6 @@ function QuizPage () {
     const history = useHistory();
 
     useEffect( () => {
-
 
     }, []);
 
@@ -84,7 +81,7 @@ function QuizPage () {
     useEffect( () => {
         setTimeout( () => {
             setComponentOpacity(1);
-        }, 350)
+        }, 450)
     }, [questionNumber]);
 
     const answerHandler = (answer) => {
@@ -117,7 +114,7 @@ function QuizPage () {
             setComponentOpacity(0);
             setTimeout( () => {
                 setQuestionNumber(questionNumber + 1);
-            }, 250)
+            }, 180);
 
         }
     }
@@ -126,12 +123,18 @@ function QuizPage () {
         <>
             <Wrapper>
                 { !loading ?
-                    <Container>
+                    <Container numberNine={isMobile && questionNumber == 9 }>
                         <ProgressBar fill={(progressFill/12) * 100} />
                         <Content opacity={componentOpacity}>
                             <QuestionTitleArea>
-                                <QuestionNumber questionNumber={questionNumber} />
-                                <QuestionContent questionNumber={questionNumber}/>
+                                {isMobile && questionNumber == 9 ?
+                                    null
+                                    :
+                                    <>
+                                        <QuestionNumber questionNumber={questionNumber}/>
+                                        <QuestionContent questionNumber={questionNumber}/>
+                                    </>
+                                }
                             </QuestionTitleArea>
                             <QuestionAnswerArea>
                                 { [].includes(questionNumber) &&
@@ -181,6 +184,15 @@ const Container = styled.div`
    font-weight: 400;
    font-align: center;
    align-items: center;
+   ${props => props.numberNine ? 
+        `
+        background-image: url('/images/question_9_background@3x.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        `
+    :
+        null
+    }   
 `;
 
 const LoadingContainer = styled.div`
@@ -199,7 +211,7 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    transition: opacity 0.2s;
+    transition: opacity 0.15s;
     opacity: ${props => props.opacity};
 `;
 
