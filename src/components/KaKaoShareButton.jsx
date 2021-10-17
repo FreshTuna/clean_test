@@ -8,8 +8,8 @@ function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
         Kakao.Link.sendDefault({
             objectType: "feed",
             content:{
-                title:"hi",
-                description:"test share",
+                title:"나의 청소요정은?",
+                description:"",
                 imageUrl: `https://clean-test.vercel.app/images/fairys/${_imageUrl}@3x.png`,
                 link:{
                     webUrl:"https://clean-test.vercel.app/",
