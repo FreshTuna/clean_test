@@ -37,7 +37,6 @@ function QuizPage () {
     const history = useHistory();
 
     useEffect( () => {
-
     }, []);
 
     const onStop = () => {

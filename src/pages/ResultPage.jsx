@@ -9,6 +9,7 @@ import ButtonContainer from "../components/ButtonContainer";
 import ResultFooter from "../components/ResultFooter";
 import CleaningLabFooter from "../components/CleaningLabFooter";
 
+
 function ResultPage (props) {
     const resultType = props.match.params.id;
     const location = useLocation();
@@ -30,7 +31,7 @@ function ResultPage (props) {
                     {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
                     <MyRoom id={resultType} />
                     <FairyMatch fit={1} unfit={1}/>
-                    <ButtonContainer />
+                    <ButtonContainer result={resultType} />
                     <CleaningLabFooter />
                     <ResultFooter />
                 </Container>

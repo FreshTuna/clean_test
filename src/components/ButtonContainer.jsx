@@ -2,8 +2,10 @@ import {useEffect} from "react";
 import styled from "styled-components";
 import {useHistory} from "react-router-dom";
 import {CopyToClipboard} from "react-copy-to-clipboard/lib/Component";
+import KaKaoShareButton from "./KaKaoShareButton";
+import {NUMBER_MBTI} from "../common/constant";
 
-function ButtonContainer () {
+function ButtonContainer ({result}) {
 
     const history = useHistory();
     useEffect( () => {
@@ -20,7 +22,7 @@ function ButtonContainer () {
     return (
         <Wrapper>
             <ShareButtonContainer>
-                <ShareButton src={"/images/share_btn@3x.png"} />
+                <KaKaoShareButton _imageUrl={NUMBER_MBTI[result].NAME} />
                 <CopyToClipboard text={copyUrl} >
                     <ShareButton src={"/images/copylink_btn@3x.png"} />
                 </CopyToClipboard>

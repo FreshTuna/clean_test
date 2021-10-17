@@ -24,3 +24,22 @@ export const MBTI_NUMBER = {
     "ESFJ" : {KEY: 15, NAME: "ESFJ"},
     "ENFJ" : {KEY: 16, NAME: "ENFJ"},
 }
+
+export const NUMBER_MBTI = {
+    1 : {KEY: 1, NAME: "ISFP"},
+    2 : {KEY: 2, NAME: "ISTJ"},
+    3 : {KEY: 3, NAME: "INTP"},
+    4 : {KEY: 4, NAME: "ENTJ"},
+    5 : {KEY: 5, NAME: "ESFP"},
+    6 : {KEY: 6, NAME: "ISFJ"},
+    7 : {KEY: 7, NAME: "ISTP"},
+    8 : {KEY: 8, NAME: "INTJ"},
+    9 : {KEY: 9, NAME: "INFP"},
+    10 : {KEY: 10, NAME: "ENFP"},
+    11 : {KEY: 11, NAME: "INFJ"},
+    12 : {KEY: 12, NAME: "ENTP"},
+    13 : {KEY: 13, NAME: "ESTJ"},
+    14 : {KEY: 14, NAME: "ESTP"},
+    15 : {KEY: 15, NAME: "ESFJ"},
+    16 : {KEY: 16, NAME: "ENFJ"},
+}
