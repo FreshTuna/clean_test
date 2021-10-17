@@ -3,14 +3,14 @@ import styled from "styled-components";
 const { Kakao } = window;
 
 function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
-
+    console.log(`https://clean-test.vercel.app/images/fairy/${_imageUrl}@3x.png`);
     function onClickKaKaoShare() {
         Kakao.Link.sendDefault({
             objectType: "feed",
             content:{
                 title:"hi",
                 description:"test share",
-                imageUrl: `https://clean-test.vercel.app/images/fairy/${_imageUrl}@3x.png`,
+                imageUrl: `https://clean-test.vercel.app/images/fairys/${_imageUrl}@3x.png`,
                 link:{
                     webUrl:"https://clean-test.vercel.app/",
                     mobileWebUrl: "https://clean-test.vercel.app/",
