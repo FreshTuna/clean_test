@@ -27,7 +27,6 @@ function QuizPage () {
     const [isPaused, SetIsPaused] = useState(false);
     const [loading, setLoading] = useState(false);
     const [questionNumber, setQuestionNumber] = useState(1);
-    const [progressFill, setProgressFill] = useState(1);
     const [energy, setEnergy] = useState(0);
     const [information, setInformation] = useState(0);
     const [decision, setDecision] = useState(0);
@@ -94,8 +93,6 @@ function QuizPage () {
             setLifeStyle(lifeStyle + answer);
         }
 
-        setProgressFill(progressFill + 1);
-
         if (questionNumber == 12){
             const mbti = initMBTI()
             console.log(mbti);
@@ -123,7 +120,7 @@ function QuizPage () {
             <Wrapper>
                 { !loading ?
                     <Container numberNine={isMobile && questionNumber == 9 }>
-                        <ProgressBar fill={(progressFill/12) * 100} />
+                        <ProgressBar fill={(questionNumber/12) * 100} />
                         <Content opacity={componentOpacity}>
                             <QuestionTitleArea>
                                 {isMobile && questionNumber == 9 ?
