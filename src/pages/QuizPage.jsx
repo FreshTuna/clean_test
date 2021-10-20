@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Lottie from "react-lottie";
 import Hoops from "../img/lottie/75839-jump-through-4-hoops.json";
-import QuestionNumber from "../components/QuestionNumber";
+import QuestionTitle from "../components/QuestionTitle";
 import QuestionContent from "../components/QuestionContent";
 import {useHistory} from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
@@ -119,18 +119,14 @@ function QuizPage () {
         <>
             <Wrapper>
                 { !loading ?
-                    <Container numberNine={isMobile && questionNumber == 9 }>
+                    <Container>
                         <ProgressBar fill={(questionNumber/12) * 100} />
                         <Content opacity={componentOpacity}>
                             <QuestionTitleArea>
-                                {isMobile && questionNumber == 9 ?
-                                    null
-                                    :
                                     <>
-                                        <QuestionNumber questionNumber={questionNumber}/>
-                                        <QuestionContent questionNumber={questionNumber}/>
+                                        <QuestionTitle questionNumber={questionNumber}/>
+                                        {/*<QuestionContent questionNumber={questionNumber}/>*/}
                                     </>
-                                }
                             </QuestionTitleArea>
                             <QuestionAnswerArea>
                                 { [].includes(questionNumber) &&
@@ -180,15 +176,6 @@ const Container = styled.div`
    font-weight: 400;
    font-align: center;
    align-items: center;
-   ${props => props.numberNine ? 
-        `
-        background-image: url('/images/question_9_background@3x.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        `
-    :
-        null
-    }   
 `;
 
 const LoadingContainer = styled.div`
@@ -224,7 +211,7 @@ const QuestionAnswerArea = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 48px;
+    margin-top: 30px;
     align-items:center;
 `;
 

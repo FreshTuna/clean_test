@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function QuestionNumber (props) {
+function QuestionTitle (props) {
     return (
         <>
             <QuestionText src={`/images/questions/question_${props.questionNumber}_title@3x.png`} />
@@ -9,8 +9,8 @@ function QuestionNumber (props) {
 }
 
 const QuestionText = styled.img`
-    height: 22.5px;
+    width: 100%;
     margin-bottom: 22px;
 `;
 
-export default QuestionNumber;
+export default QuestionTitle;
