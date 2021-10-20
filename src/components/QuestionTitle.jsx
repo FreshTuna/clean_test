@@ -10,7 +10,6 @@ function QuestionTitle (props) {
 
 const QuestionText = styled.img`
     width: 100%;
-    margin-bottom: 22px;
 `;
 
 export default QuestionTitle;
