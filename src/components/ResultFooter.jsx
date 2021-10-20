@@ -4,8 +4,24 @@ function ResultFooter () {
 
     return (
         <Wrapper>
-            <PresentBy src={"/images/footer_text@3x.png"} />
-            <Contributors src={"/images/contributors@3x.png"} />
+            <PresentBy src={"/images/present_by@3x.png"} />
+            <Contributors>
+                <a href={"https://naver.com"} target="_blank" rel="noopener noreferrer">
+                    <Contributor src={"/images/contributor_kaya@3x.png"} />
+                </a>
+
+                <Dot src={"/images/dot@3x.png"} />
+
+                <a href={"https://naver.com"} target="_blank" rel="noopener noreferrer">
+                    <Contributor src={"/images/contributor_henry@3x.png"} />
+                </a>
+
+                <Dot src={"/images/dot@3x.png"} />
+
+                <a href={"https://naver.com"} target="_blank" rel="noopener noreferrer">
+                    <Contributor src={"/images/contributor_alex@3x.png"} />
+                </a>
+            </Contributors>
         </Wrapper>
     )
 }
@@ -20,9 +36,18 @@ const PresentBy = styled.img`
     margin-bottom: 5px;
 `;
 
-const Contributors = styled.img`
+const Contributors = styled.div`
+    display: flex;
+    align-items:center;
     margin-top: 5px;
-    width: 185px;
+`;
+
+const Dot = styled.img`
+    width: 24px;
+`;
+
+const Contributor = styled.img`
+    width: 64px;
 `;
 
 const Wrapper = styled.section`
