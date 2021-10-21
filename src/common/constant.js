@@ -43,3 +43,22 @@ export const NUMBER_MBTI = {
     15 : {KEY: 15, NAME: "ESFJ"},
     16 : {KEY: 16, NAME: "ENFJ"},
 }
+
+export const MBTI_COMBINATION = {
+    1 : {NAME: "ISFP", PERFECT:15, ANTI:3},
+    2 : {NAME: "ISTJ", PERFECT:6, ANTI:9},
+    3 : {NAME: "INTP", PERFECT:7, ANTI:4},
+    4 : {NAME: "ENTJ", PERFECT:8, ANTI:3},
+    5 : {NAME: "ESFP", PERFECT:13, ANTI:3},
+    6 : {NAME: "ISFJ", PERFECT:13, ANTI:12},
+    7 : {NAME: "ISTP", PERFECT:2, ANTI:11},
+    8 : {NAME: "INTJ", PERFECT:4, ANTI:14},
+    9 : {NAME: "INFP", PERFECT:16, ANTI:5},
+    10 : {NAME: "ENFP", PERFECT:6, ANTI:13},
+    11 : {NAME: "INFJ", PERFECT:5, ANTI:7},
+    12 : {NAME: "ENTP", PERFECT:16, ANTI:6},
+    13 : {NAME: "ESTJ", PERFECT:4, ANTI:10},
+    14 : {NAME: "ESTP", PERFECT:7, ANTI:2},
+    15 : {NAME: "ESFJ", PERFECT:4, ANTI:5},
+    16 : {NAME: "ENFJ", PERFECT:12, ANTI:6}
+}

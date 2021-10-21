@@ -8,6 +8,7 @@ import FairyMatch from "../components/FairyMatch";
 import ButtonContainer from "../components/ButtonContainer";
 import ResultFooter from "../components/ResultFooter";
 import CleaningLabFooter from "../components/CleaningLabFooter";
+import {MBTI_COMBINATION} from "../common/constant";
 
 
 function ResultPage (props) {
@@ -30,7 +31,7 @@ function ResultPage (props) {
                     <FairyTypeTitle result={resultType} />
                     {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
                     <MyRoom id={resultType} />
-                    <FairyMatch fit={1} unfit={1}/>
+                    <FairyMatch fit={MBTI_COMBINATION[resultType].PERFECT} unfit={MBTI_COMBINATION[resultType].ANTI}/>
                     <ButtonContainer result={resultType} />
                     <CleaningLabFooter />
                     <ResultFooter />
