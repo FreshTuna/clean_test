@@ -61,7 +61,8 @@ const Fairy = styled.div`
 `;
 
 const FairyImage = styled.img`
-    width: 120px;
+    width: 144px;
+    height: 124px;
     position: absolute;
     top: 0;
     left: 0;

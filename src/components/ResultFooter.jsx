@@ -6,7 +6,7 @@ function ResultFooter () {
         <Wrapper>
             <PresentBy src={"/images/present_by@3x.png"} />
             <Contributors>
-                <a href={"https://naver.com"} target="_blank" rel="noopener noreferrer">
+                <a href={"https://brunch.co.kr/@kaya"} target="_blank" rel="noopener noreferrer">
                     <Contributor src={"/images/contributor_kaya@3x.png"} />
                 </a>
 
