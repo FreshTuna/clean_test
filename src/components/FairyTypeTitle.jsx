@@ -30,6 +30,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 360px;
 `;
 
 const CommonTitle = styled.img`
