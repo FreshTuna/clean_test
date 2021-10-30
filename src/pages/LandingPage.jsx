@@ -37,7 +37,7 @@ function LandingPage () {
                             <Lottie
                                 options={lottieOptions}
                                 isClickToPauseDisabled={false}
-                                style={{width: "360px", height: "280px"}}
+                                style={{width: "360px", height: "280px", marginBottom: "15px"}}
 
                             />
 
