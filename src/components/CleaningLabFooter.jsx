@@ -11,8 +11,12 @@ function CleaningLabFooter() {
                 <InnerContainer>
                     <LinkTitle src={"/images/app_link_title@3x.png"} />
                     <AppButtonContainer>
-                        <AppIcon src={"/images/app_link_android@3x.png"} />
-                        <AppIcon src={"/images/app_link_ios@3x.png"} marginRight={"17px"} />
+                        <ATag href={"https://clabm.app.link/rLeBy9EbShb"}>
+                            <AppIcon src={"/images/app_link_android@3x.png"} />
+                        </ATag>
+                        <ATag href={"https://clabm.app.link/rLeBy9EbShb"}>
+                            <AppIcon src={"/images/app_link_ios@3x.png"} marginRight={"17px"} />
+                        </ATag>
                     </AppButtonContainer>
                 </InnerContainer>
             </Container>
@@ -28,8 +32,8 @@ const Wrapper = styled.section`
 `;
 
 const ContentBorder = styled.img`
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     width: 289px;
 `;
 
@@ -61,6 +65,10 @@ const AppButtonContainer = styled.div`
 const AppIcon = styled.img`
     height: 23px;
     margin-right: ${ props => props.marginRight ? props.marginRight : "0px"};
+`;
+
+const ATag = styled.a`
+    
 `;
 
 export default CleaningLabFooter;
