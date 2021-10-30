@@ -2,6 +2,8 @@ import {useEffect, useState} from "react";
 import styled from "styled-components";
 import StartButton from "../components/StartButton";
 import {Link, useHistory} from "react-router-dom";
+import Lottie from "react-lottie";
+import Fairies from "../img/lottie/fairy_lottie.json";
 
 function LandingPage () {
     const [loading, setLoading] = useState(false);
@@ -19,6 +21,16 @@ function LandingPage () {
         }, 1000)
     }
 
+    const lottieOptions = {
+        animationData: Fairies,
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            className: 'add-class',
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    }
+
     return (
         <>
             <Wrapper>
@@ -27,7 +39,12 @@ function LandingPage () {
                         <Content>
                             <LandingTitle src={"/images/landing_title@3x.png"}/>
                             <LandingSubTitle src={"/images/landing_sub_title@3x.png"}/>
-                            <LandingMainImage src={"/images/landing_main@3x.png"}/>
+                            <Lottie
+                                options={lottieOptions}
+                                isClickToPauseDisabled={false}
+                                style={{width: "265px", height: "265px"}}
+
+                            />
 
                             <StartButton click={toQuiz}/>
                             <LifeLabIcon src={"/images/lifelab_icon@3x.png"}/>

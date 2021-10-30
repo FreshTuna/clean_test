@@ -12,16 +12,6 @@ import AnswerWithImage from "../components/AnswerWithImage";
 import {DECISION, ENERGY, INFORMATION, LIFE_STYLE, MBTI_NUMBER} from "../common/constant";
 import {isMobile} from "react-device-detect";
 
-const lottieOptions = {
-    animationData: Hoops,
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-        className: 'add-class',
-        preserveAspectRatio: 'xMidYMid slice'
-    }
-}
-
 function QuizPage () {
     const [isStopped, SetIsStopped] = useState(false);
     const [isPaused, SetIsPaused] = useState(false);
