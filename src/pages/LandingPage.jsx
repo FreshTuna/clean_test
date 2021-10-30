@@ -14,11 +14,7 @@ function LandingPage () {
     }, []);
 
     const toQuiz = () => {
-        setLoading(true);
-        setTimeout( () => {
-
-            history.push('/quiz');
-        }, 1000)
+        history.push('/quiz');
     }
 
     const lottieOptions = {
@@ -34,7 +30,6 @@ function LandingPage () {
     return (
         <>
             <Wrapper>
-                {!loading ?
                     <Container>
                         <Content>
                             <LandingTitle src={"/images/landing_title@3x.png"}/>
@@ -50,11 +45,6 @@ function LandingPage () {
                             <LifeLabIcon src={"/images/lifelab_icon@3x.png"}/>
                         </Content>
                     </Container>
-                    :
-                    <LoadingContainer>
-                        <LoadingFairyImage src={"/images/loading_fairy_single@3x.png"}/>
-                    </LoadingContainer>
-                }
             </Wrapper>
         </>
     )

@@ -62,3 +62,23 @@ export const MBTI_COMBINATION = {
     15 : {NAME: "ESFJ", PERFECT:4, ANTI:5},
     16 : {NAME: "ENFJ", PERFECT:12, ANTI:6}
 }
+
+export const SHARE_FAIRY_TITLE = {
+    "ISFP" : {KEY: 1, TITLE: "누워있는게 행복"},
+    "ISTJ" : {KEY: 2, TITLE: "청소는 장비빨!"},
+    "INTP" : {KEY: 3, TITLE: "귀찮은데 어쩌라고요!"},
+    "ENTJ" : {KEY: 4, TITLE: "청소에 예민해요"},
+    "ESFP" : {KEY: 5, TITLE: "청소는 삘이 올 때!"},
+    "ISFJ" : {KEY: 6, TITLE: "칼각 제자리가 생명!"},
+    "ISTP" : {KEY: 7, TITLE: "청소는 스피드가 생명"},
+    "INTJ" : {KEY: 8, TITLE: "청소? 이미 다했는데요"},
+    "INFP" : {KEY: 9, TITLE: "졸업앨범 엔딩"},
+    "ENFP" : {KEY: 10, TITLE: "모르겠고 일단 쇼핑!"},
+    "INFJ" : {KEY: 11, TITLE: "~~내꺼 써야돼~~"},
+    "ENTP" : {KEY: 12, TITLE: "제 청소 도와주실 분?"},
+    "ESTJ" : {KEY: 13, TITLE: "버리는 것 부터 청소죠"},
+    "ESTP" : {KEY: 14, TITLE: "아 이것만 보고 할게요"},
+    "ESFJ" : {KEY: 15, TITLE: "여러분 청소는 평소에!"},
+    "ENFJ" : {KEY: 16, TITLE: "남의집 청소도 내가!"},
+
+}

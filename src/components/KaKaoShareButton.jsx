@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {MBTI_NUMBER} from "../common/constant";
+import {MBTI_NUMBER, SHARE_FAIRY_TITLE} from "../common/constant";
 
 const { Kakao } = window;
 
@@ -9,8 +9,8 @@ function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
         Kakao.Link.sendDefault({
             objectType: "feed",
             content:{
-                title:"나의 청소요정은?",
-                description:"",
+                title: SHARE_FAIRY_TITLE[_imageUrl].TITLE,
+                description:"나의 청소요정은?",
                 imageUrl: `https://clean-test.vercel.app/images/fairies/${_imageUrl}@3x.png`,
                 link:{
                     webUrl:"https://clean-test.vercel.app/",
