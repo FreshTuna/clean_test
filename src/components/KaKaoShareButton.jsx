@@ -4,32 +4,32 @@ import {MBTI_NUMBER, SHARE_FAIRY_TITLE} from "../common/constant";
 const { Kakao } = window;
 
 function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
-    console.log(`https://clean-test.vercel.app/images/fairy/${_imageUrl}@3x.png`);
+
     function onClickKaKaoShare() {
         Kakao.Link.sendDefault({
             objectType: "feed",
             content:{
                 title: SHARE_FAIRY_TITLE[_imageUrl].TITLE,
-                description:"나의 청소요정은?",
-                imageUrl: `https://clean-test.vercel.app/images/fairies/${_imageUrl}@3x.png`,
+                description:"나는 어떤 청소요정일까?",
+                imageUrl: `https://clean-fairy.vercel.app/images/fairies/${_imageUrl}@3x.png`,
                 link:{
-                    webUrl:"https://clean-test.vercel.app/",
-                    mobileWebUrl: "https://clean-test.vercel.app/",
+                    webUrl:"https://clean-fairy.vercel.app/",
+                    mobileWebUrl: "https://clean-fairy.vercel.app/",
                 },
             },
             buttons: [
                 {
                     title: '자세히 보기',
                     link: {
-                        webUrl: `https://clean-test.vercel.app/result/${MBTI_NUMBER[_imageUrl].KEY}`,
-                        mobileWebUrl: `https://clean-test.vercel.app/result/${MBTI_NUMBER[_imageUrl].KEY}`,
+                        webUrl: `https://clean-fairy.vercel.app/result/${MBTI_NUMBER[_imageUrl].KEY}`,
+                        mobileWebUrl: `https://clean-fairy.vercel.app/result/${MBTI_NUMBER[_imageUrl].KEY}`,
                     }
                 },
                 {
                     title: '테스트 시작하기',
                     link: {
-                        webUrl:"https://clean-test.vercel.app/",
-                        mobileWebUrl: "https://clean-test.vercel.app/",
+                        webUrl:"https://clean-fairy.vercel.app/",
+                        mobileWebUrl: "https://clean-fairy.vercel.app/",
                     }
                 }
             ]
