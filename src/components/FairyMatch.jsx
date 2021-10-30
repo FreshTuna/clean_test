@@ -49,6 +49,7 @@ const MatchContainer = styled.div`
 const FairyFrame = styled.div`
     margin-bottom: 12px;
     position: relative;
+    cursor: pointer;
 `;
 
 const FairyFrameImage = styled.img`
