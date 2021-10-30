@@ -12,13 +12,13 @@ function ResultFooter () {
 
                 <Dot src={"/images/dot@3x.png"} />
 
-                <a href={"https://naver.com"} target="_blank" rel="noopener noreferrer">
+                <a href={"https://velog.io/@jun17114"} target="_blank" rel="noopener noreferrer">
                     <Contributor src={"/images/contributor_henry@3x.png"} />
                 </a>
 
                 <Dot src={"/images/dot@3x.png"} />
 
-                <a href={"https://naver.com"} target="_blank" rel="noopener noreferrer">
+                <a href={"https://brunch.co.kr/@bluehyudawn"} target="_blank" rel="noopener noreferrer">
                     <Contributor src={"/images/contributor_alex@3x.png"} />
                 </a>
             </Contributors>
