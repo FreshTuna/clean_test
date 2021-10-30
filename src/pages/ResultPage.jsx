@@ -27,10 +27,7 @@ function ResultPage (props) {
         <>
             <Wrapper>
                 <Container>
-                    {mbti && mbti}
                     <FairyTypeTitle result={resultType} />
-                    {/*<FairyTypeContent id={resultType} content={content} special={special} />*/}
-                    <MyRoom id={resultType} />
                     <FairyMatch fit={MBTI_COMBINATION[resultType].PERFECT} unfit={MBTI_COMBINATION[resultType].ANTI}/>
                     <ButtonContainer result={resultType} />
                     <CleaningLabFooter />

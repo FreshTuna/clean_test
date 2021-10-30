@@ -12,18 +12,16 @@ function FairyMatch(props) {
             <MatchContainer>
                 <GoodFairy src={"/images/good_mate@3x.png"} />
                 <FairyFrame>
-                    <FairyFrameImage src={"/images/fairy_match_frame@3x.png"} />
-                    <FairyImage src={`/images/fairies/${MBTI_COMBINATION[props.fit].NAME}@3x.png`} />
+                    <FairyFrameImage src={`https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/match/${MBTI_COMBINATION[props.fit].NAME}_frame_fit%403x.png`} />
                 </FairyFrame>
-                <FairyName src={`/images/fairy_name1@3x.png`} />
+                <FairyName src={`https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/title/${MBTI_COMBINATION[props.fit].NAME}_title%403x.png`} />
             </MatchContainer>
             <MatchContainer>
                 <BadFairy src={"/images/bad_mate@3x.png"} />
                 <FairyFrame>
-                    <FairyFrameImage src={"/images/fairy_match_frame@3x.png"} />
-                    <FairyImage src={`/images/fairies/${MBTI_COMBINATION[props.unfit].NAME}@3x.png`} />
+                    <FairyFrameImage src={`https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/match/${MBTI_COMBINATION[props.unfit].NAME}_frame_unfit%403x.png`} />
                 </FairyFrame>
-                <FairyName src={`/images/fairy_name1@3x.png`} />
+                <FairyName src={`https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/title/${MBTI_COMBINATION[props.unfit].NAME}_title%403x.png`} />
             </MatchContainer>
         </Wrapper>
     )
@@ -53,7 +51,7 @@ const FairyFrameImage = styled.img`
 `;
 
 const FairyName = styled.img`
-    width: 103px;
+    height: 16px;
 `;
 
 const Fairy = styled.div`
