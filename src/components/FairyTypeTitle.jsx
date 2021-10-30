@@ -16,7 +16,12 @@ function FairyTypeTitle (props) {
             {/*<CommonTitle src={TitleImage} />*/}
             {/*<FairyTitle src={`/images/FairyTitle${props.id}@3x.png`} />*/}
             {/*<FairyImage src={`/images/FairyImage${props.id}@3x.png`} />*/}
-            <FairyImage src={`/images/results/result_main_frame_${props.result}@3x.png`}></FairyImage>
+            {
+                props.result < 4 ?
+                    <FairyImage src={`https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/result_main_frame_${props.result}%403x.png`}></FairyImage>
+                    :
+                    <FairyImage src={`/images/results/result_main_frame_${props.result}@3x.png`}></FairyImage>
+            }
         </Container>
     )
 }

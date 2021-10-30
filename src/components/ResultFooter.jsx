@@ -32,7 +32,7 @@ const SymbolImage = styled.img`
 `;
 
 const PresentBy = styled.img`
-    width: 85px;
+    width: 116px;
     margin-bottom: 5px;
 `;
 
