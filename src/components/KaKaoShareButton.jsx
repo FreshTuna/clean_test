@@ -38,7 +38,7 @@ function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
 
     return(
         <>
-            <ShareButton id={"button_kakao"} src={"/images/share_btn@3x.png"} onClick={onClickKaKaoShare} />
+            <ShareButton id={"button_share"} src={"/images/share_btn@3x.png"} onClick={onClickKaKaoShare} />
         </>
     )
 }

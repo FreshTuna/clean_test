@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import styled from "styled-components";
-import TitleImage from "../img/common_title@3x.png"
 import {MBTI_NUMBER} from "../common/constant";
 
 function FairyTypeTitle (props) {
@@ -13,7 +12,6 @@ function FairyTypeTitle (props) {
 
     return(
         <Container>
-            {/*<CommonTitle src={TitleImage} />*/}
             {/*<FairyTitle src={`/images/FairyTitle${props.id}@3x.png`} />*/}
             {/*<FairyImage src={`/images/FairyImage${props.id}@3x.png`} />*/}
             {

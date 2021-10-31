@@ -11,10 +11,10 @@ function CleaningLabFooter() {
                 <InnerContainer>
                     <LinkTitle src={"/images/app_link_title@3x.png"} />
                     <AppButtonContainer>
-                        <ATag href={"https://link.cleaninglab.co.kr/6roj6JA9Mkb"}>
+                        <ATag id={"button_android"} href={"https://link.cleaninglab.co.kr/6roj6JA9Mkb"}>
                             <AppIcon src={"/images/app_link_android@3x.png"} />
                         </ATag>
-                        <ATag href={"https://link.cleaninglab.co.kr/6roj6JA9Mkb"}>
+                        <ATag id={"button_ios"} href={"https://link.cleaninglab.co.kr/6roj6JA9Mkb"}>
                             <AppIcon src={"/images/app_link_ios@3x.png"} marginRight={"17px"} />
                         </ATag>
                     </AppButtonContainer>
