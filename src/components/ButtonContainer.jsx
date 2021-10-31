@@ -23,8 +23,8 @@ function ButtonContainer ({result}) {
         <Wrapper>
             <ShareButtonContainer>
                 <KaKaoShareButton _imageUrl={NUMBER_MBTI[result].NAME} />
-                <CopyToClipboard id={"button_copy"} text={copyUrl} >
-                    <ShareButton src={"/images/copylink_btn@3x.png"} />
+                <CopyToClipboard text={copyUrl} >
+                    <ShareButton id={"button_copy"}  src={"/images/copylink_btn@3x.png"} />
                 </CopyToClipboard>
             </ShareButtonContainer>
             <RestartButton src={"/images/re_test_btn@3x.png"} id={"button_retry"} onClick={restartTest}/>
