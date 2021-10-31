@@ -41,7 +41,7 @@ function LandingPage () {
 
                             />
 
-                            <StartButton id={"button_start"} click={toQuiz}/>
+                            <StartButton click={toQuiz}/>
                             <LifeLabIcon src={"/images/lifelab_icon@3x.png"}/>
                         </Content>
                     </Container>

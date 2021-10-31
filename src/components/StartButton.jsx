@@ -9,7 +9,7 @@ function StartButton (props) {
 
     return (
         <Wrapper>
-            <ButtonImg src={"/images/start_button@3x.png"} onClick={props.click} />
+            <ButtonImg src={"/images/start_button@3x.png"} id={"button_start"} onClick={props.click} />
         </Wrapper>
     )
 }
