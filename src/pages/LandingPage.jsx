@@ -4,6 +4,8 @@ import StartButton from "../components/StartButton";
 import {Link, useHistory} from "react-router-dom";
 import Lottie from "react-lottie";
 import Fairies from "../img/lottie/fairy_lottie.json";
+import {NUMBER_MBTI, SHARE_FAIRY_TITLE} from "../common/constant";
+import {Helmet} from "react-helmet";
 
 function LandingPage () {
     const [loading, setLoading] = useState(false);
