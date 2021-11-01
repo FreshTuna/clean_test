@@ -8,7 +8,8 @@ import FairyMatch from "../components/FairyMatch";
 import ButtonContainer from "../components/ButtonContainer";
 import ResultFooter from "../components/ResultFooter";
 import CleaningLabFooter from "../components/CleaningLabFooter";
-import {MBTI_COMBINATION} from "../common/constant";
+import {MBTI_COMBINATION, NUMBER_MBTI, SHARE_FAIRY_TITLE} from "../common/constant";
+import {Helmet} from "react-helmet";
 
 
 function ResultPage (props) {
@@ -25,6 +26,9 @@ function ResultPage (props) {
 
     return (
         <>
+            <Helmet>
+                <title>{SHARE_FAIRY_TITLE[NUMBER_MBTI[resultType].NAME].TITLE}</title>
+            </Helmet>
             <Wrapper>
                 <Container>
                     <FairyTypeTitle result={resultType} />
