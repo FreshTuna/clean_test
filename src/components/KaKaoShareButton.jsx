@@ -11,7 +11,7 @@ function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
             content:{
                 title: SHARE_FAIRY_TITLE[_imageUrl].TITLE,
                 description:"나는 어떤 청소요정일까?",
-                imageUrl: `https://cleaning-fairy.vercel.app/images/fairies/${_imageUrl}@3x.png`,
+                imageUrl: `https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/og/og_share_${MBTI_NUMBER[_imageUrl].KEY}.png`,
                 link:{
                     webUrl:"https://cleaning-fairy.vercel.app/",
                     mobileWebUrl: "https://cleaning-fairy.vercel.app/",

@@ -95,7 +95,7 @@ function QuizPage () {
                     pathname:`/result/${mbtiId}`,
                     state: {mbti: mbti}
                 });
-            }, 1000)
+            }, 1500)
         } else {
             setComponentOpacity(0);
             setTimeout( () => {
@@ -141,7 +141,6 @@ function QuizPage () {
                     </Container>
                     :
                     <LoadingContainer>
-                        <LoadingFairyImage src={"/images/loading_fairy@3x.png"}/>
                     </LoadingContainer>
                 }
             </Wrapper>
@@ -171,11 +170,14 @@ const Container = styled.div`
 const LoadingContainer = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: #00BED6;
+    background-color: #FBF9F4;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url('https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/result_loading.webp');
+    background-repeat : no-repeat;
+    background-size : cover;
 `;
 
 const Content = styled.div`
