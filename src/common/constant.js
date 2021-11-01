@@ -74,7 +74,7 @@ export const SHARE_FAIRY_TITLE = {
     "INTJ" : {KEY: 8, TITLE: "청소? 이미 다했는데요"},
     "INFP" : {KEY: 9, TITLE: "졸업앨범 엔딩"},
     "ENFP" : {KEY: 10, TITLE: "모르겠고 일단 쇼핑!"},
-    "INFJ" : {KEY: 11, TITLE: "~~내꺼 써야돼~~"},
+    "INFJ" : {KEY: 11, TITLE: "나만의 시간을 위한 청소"},
     "ENTP" : {KEY: 12, TITLE: "제 청소 도와주실 분?"},
     "ESTJ" : {KEY: 13, TITLE: "버리는 것 부터 청소죠"},
     "ESTP" : {KEY: 14, TITLE: "아 이것만 보고 할게요"},
