@@ -115,7 +115,6 @@ function QuizPage () {
                             <QuestionTitleArea>
                                     <>
                                         <QuestionTitle questionNumber={questionNumber}/>
-                                        {/*<QuestionContent questionNumber={questionNumber}/>*/}
                                     </>
                             </QuestionTitleArea>
                             <QuestionAnswerArea>
@@ -125,18 +124,7 @@ function QuizPage () {
                                 { [1,2,3,4,5,6,7,8,9,10,11,12].includes(questionNumber) &&
                                     <AnswerWithImage questionNumber={questionNumber} answerHandler={answerHandler} />
                                 }
-                                {/*{questionNumber == 10 &&*/}
-                                {/*    <AnswerLarge questionNumber={questionNumber} answerHandler={answerHandler} />*/}
-                                {/*}*/}
                             </QuestionAnswerArea>
-                            {/*<Lottie*/}
-                            {/*    options={lottieOptions}*/}
-                            {/*    isStopped={isStopped}*/}
-                            {/*    isPaused={isPaused}*/}
-                            {/*    isClickToPauseDisabled={false}*/}
-                            {/*    style={{width: "300px", height: "300px"}}*/}
-                            {/*/>*/}
-                            {/*<LottieButton onClick={onPause}>Play/Pause</LottieButton>*/}
                         </Content>
                     </Container>
                     :
@@ -205,24 +193,6 @@ const QuestionAnswerArea = styled.div`
     justify-content: center;
     margin-top: 30px;
     align-items:center;
-`;
-
-const YesButton = styled.img`
-    width: 315px;
-    cursor: pointer;
-`;
-
-const NoButton = styled.img`
-    width: 315px;
-    cursor: pointer;
-`;
-
-const LottieButton = styled.button`
-    width: 30%;
-`;
-
-const LoadingFairyImage = styled.img`
-    width: 250px;
 `;
 
 export default QuizPage;
