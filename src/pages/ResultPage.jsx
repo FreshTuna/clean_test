@@ -2,8 +2,6 @@ import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import styled from "styled-components";
 import FairyTypeTitle from "../components/FairyTypeTitle";
-import FairyTypeContent from "../components/FairyTypeContent";
-import MyRoom from "../components/MyRoom";
 import FairyMatch from "../components/FairyMatch";
 import ButtonContainer from "../components/ButtonContainer";
 import ResultFooter from "../components/ResultFooter";

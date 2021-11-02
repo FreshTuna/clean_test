@@ -1,16 +1,10 @@
 import {useEffect, useState} from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import Lottie from "react-lottie";
-import Hoops from "../img/lottie/75839-jump-through-4-hoops.json";
 import QuestionTitle from "../components/QuestionTitle";
-import QuestionContent from "../components/QuestionContent";
 import {useHistory} from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
-import AnswerSmall from "../components/AnswerSmall";
 import AnswerWithImage from "../components/AnswerWithImage";
 import {DECISION, ENERGY, INFORMATION, LIFE_STYLE, MBTI_NUMBER} from "../common/constant";
-import {isMobile} from "react-device-detect";
 
 function QuizPage () {
     const [isStopped, SetIsStopped] = useState(false);
@@ -118,12 +112,7 @@ function QuizPage () {
                                     </>
                             </QuestionTitleArea>
                             <QuestionAnswerArea>
-                                { [].includes(questionNumber) &&
-                                    <AnswerSmall questionNumber={questionNumber} answerHandler={answerHandler} />
-                                }
-                                { [1,2,3,4,5,6,7,8,9,10,11,12].includes(questionNumber) &&
-                                    <AnswerWithImage questionNumber={questionNumber} answerHandler={answerHandler} />
-                                }
+                                <AnswerWithImage questionNumber={questionNumber} answerHandler={answerHandler} />
                             </QuestionAnswerArea>
                         </Content>
                     </Container>

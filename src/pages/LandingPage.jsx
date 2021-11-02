@@ -1,11 +1,9 @@
 import {useEffect, useState} from "react";
 import styled from "styled-components";
 import StartButton from "../components/StartButton";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import Lottie from "react-lottie";
 import Fairies from "../img/lottie/fairy_lottie.json";
-import {NUMBER_MBTI, SHARE_FAIRY_TITLE} from "../common/constant";
-import {Helmet} from "react-helmet";
 
 function LandingPage () {
     const [loading, setLoading] = useState(false);
@@ -72,16 +70,6 @@ const Container = styled.div`
    align-items: center;
 `;
 
-const LoadingContainer = styled.div`
-    width: 100%;
-    height: 100vh;
-    background-color: #00BED6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
-
 const Content = styled.div`
     height: 100%;
     width: 100%;
@@ -99,14 +87,6 @@ const LandingTitle = styled.img`
 const LandingSubTitle = styled.img`
     width: 265px;
     margin-bottom: 63px;
-`;
-
-const LandingMainImage = styled.img`
-    width: 265px;
-`;
-
-const LoadingFairyImage = styled.img`
-    width: 110px;
 `;
 
 const LifeLabIcon = styled.img`
