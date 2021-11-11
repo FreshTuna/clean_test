@@ -13,23 +13,23 @@ function KaKaoShareButton({ _title, _sub, _imageUrl, _finalType }) {
                 description:"나는 어떤 청소요정일까?",
                 imageUrl: `https://cleanhome-dev.s3.ap-northeast-2.amazonaws.com/mbti/og/og_share_${MBTI_NUMBER[_imageUrl].KEY}.png`,
                 link:{
-                    webUrl:"https://cleaning-fairy.vercel.app/",
-                    mobileWebUrl: "https://cleaning-fairy.vercel.app/",
+                    webUrl:"https://cleaning-fairy.cleaninglab.co.kr/",
+                    mobileWebUrl: "https://cleaning-fairy.cleaninglab.co.kr/",
                 },
             },
             buttons: [
                 {
                     title: '자세히 보기',
                     link: {
-                        webUrl: `https://cleaning-fairy.vercel.app/result/${MBTI_NUMBER[_imageUrl].KEY}`,
-                        mobileWebUrl: `https://cleaning-fairy.vercel.app/result/${MBTI_NUMBER[_imageUrl].KEY}`,
+                        webUrl: `https://cleaning-fairy.cleaninglab.co.kr/result/${MBTI_NUMBER[_imageUrl].KEY}`,
+                        mobileWebUrl: `https://cleaning-fairy.cleaninglab.co.kr/result/${MBTI_NUMBER[_imageUrl].KEY}`,
                     }
                 },
                 {
                     title: '테스트 시작하기',
                     link: {
-                        webUrl:"https://cleaning-fairy.vercel.app/",
-                        mobileWebUrl: "https://cleaning-fairy.vercel.app/",
+                        webUrl:"https://cleaning-fairy.cleaninglab.co.kr/",
+                        mobileWebUrl: "https://cleaning-fairy.cleaninglab.co.kr/",
                     }
                 }
             ]
